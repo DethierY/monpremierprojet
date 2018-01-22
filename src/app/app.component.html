@@ -1,0 +1,60 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1 [class] = "classTitre">
+    Welcome to {{ title }}!
+  </h1>
+  <p>{{ getDescription() + " " + 500 }}</p>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+
+<div>
+  <h2>{{ user.name }}</h2>
+  <p>{{ user.age }}</p>
+  <p>Birthday: {{ user.birthday }}</p>
+</div>
+
+<div [ngStyle] = "{'color' : color}">
+  <p>Le texte qui chande de couleur avec le bouton</p>
+</div>
+
+<div [ngStyle] = "{'color' : couleur}">
+  <p>Texte qui change de couleur avec le menu déroulant</p>
+</div>
+
+<div>
+    <input type="text">
+</div>
+
+<button (click)= "changeTitle()">
+  Change title
+</button>
+
+<button (click) = "changeColor()">
+  Change color
+</button>
+
+<button (click) = "changeClass()">
+  Change color et background-color of title
+</button>
+
+<div>
+  <select (change) = "changeColorDropDown($event)">
+    <option value = "0" disable selected>Choix de couleur</option>
+    <option value = "red" >Red</option>
+    <option value = "blue" >Blue</option>
+    <option value = "green" >Green</option>
+  </select>
+</div>
+
+<!-- utile pour le debogage -->
+<!-- c'est un pipe -->
+<!-- tranbsforme un objet/variable dans un format particulier -->
+<pre> <!-- balise pour écrire du texte préformarté-->
+  {{user | json}}
+</pre>
+<p>
+  Birthday: {{user.birthday | date:'dd/MM/yyyy'}}
+</p>
+
+
+
